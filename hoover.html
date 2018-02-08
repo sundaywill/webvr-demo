@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>webvr</title>
+		<link rel="stylesheet" href="ace.min.css">
+		<style type="text/css">
+			.btn.btn-outline {
+				border-radius: 2rem;
+			}
+		</style>
+		<script src="aframe.min.js"></script>
+	</head>
+	<body>
+		<div id="vrview">
+			<a-scene>
+				<a-sky src="images/hoover.jpg" theta-length="360">
+					<a-animation attribute="rotation" dur="50000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation>
+				</a-sky>
+			</a-scene>
+		</div>
+		<a class="fixed top-0 left-0 z1 m2 btn btn-outline white" href="index.html">Back</a>
+		<a class="fixed top-0 right-0 z1 m2 btn btn-outline white" onclick="screenshot()">Screen Shot</a>
+		<!-- <a class="m1 btn btn-outline white">Full Screen</a> -->
+		<script>
+			function screenshot() {
+				document.querySelector('a-scene').components.screenshot.capture('perspective')
+			}
+		</script>
+	</body>
+</html>
